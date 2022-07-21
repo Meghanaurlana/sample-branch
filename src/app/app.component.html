@@ -1,11 +1,12 @@
 
 <div class="child">
   <h1>parent</h1>
+  <h1>{{children}}</h1>
   <button>parent</button>
 
 
 
 
-<app-child></app-child>
+<app-child [parentdata] = "value" (childdata)="children=$event" ></app-child>
 </div>
 <router-outlet></router-outlet>
