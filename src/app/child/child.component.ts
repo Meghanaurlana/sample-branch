@@ -14,7 +14,7 @@ export class ChildComponent implements OnInit {
   }
 
   child(){
-this.childdata.emit('data from child');
+this.childdata.emit("This is from child");
   }
 
 }

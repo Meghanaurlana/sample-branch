@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample';
-  value='data from parent';
-  public children ='';
+
+  public children = '';
+ public value: string | undefined;
+
+  onclick() {
+    this.value = "This is from parent"
+  }
 }

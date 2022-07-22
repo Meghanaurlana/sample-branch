@@ -1,7 +1,33 @@
 .child {
     align-items: center;
-    display: flex;
-    margin-left: 10rem;
+    margin-left: 3rem;
     margin-top: 10rem;
-    
+    border: 1px solid rgb(60, 215, 215);
+    padding: 2rem;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+
+    .title {
+        margin-left: 1rem;
+        font-weight: 200;
+    }
+
+    .childbtn {
+        padding:  0.5rem 1.5rem;
+        font-size: 1rem;
+        border: 1rem;
+        background-color: rgb(189, 248, 235);
+        border-radius: 2rem;
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+
+    .childbtn:hover {
+        background-color: rgb(84, 232, 232);
+    }
+
+    .childdata{
+        font-weight: 200;
+    }
 }
