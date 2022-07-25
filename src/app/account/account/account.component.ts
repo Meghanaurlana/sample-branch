@@ -33,8 +33,9 @@ export class AccountComponent implements OnInit {
       ]),
     })
   }
-  onsubmit(){
-    console.log(this.accountform.value);
+  onSubmit(){
+  
+    this.accountform.markAllAsTouched()
      }
 
 

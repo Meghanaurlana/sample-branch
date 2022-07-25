@@ -3,28 +3,36 @@
         <h1 class="create">createaccount</h1>
     </div>
     <div class="details">
-        <form [formGroup]="accountform" (ngSubmit)="onsubmit()">
-            <div class="name">
+        <form [formGroup]="accountform" (ngSubmit)="onSubmit()">
+            <div class="field">
                 <label>name</label>
-                <input type="text" formControlName="name"    *ngIf="this.accountform.controls['name']" pInputText>
+                <input type="text" formControlName="name" pInputText>
+                <small class="text-danger"
+                    *ngIf="accountform.controls['name'].touched  && accountform.controls['name'].invalid ">username
+                </small>
+                <!-- <small>{{accountform.controls['name'].value}}</small> -->
             </div>
-            <div class="email">
+            <div class="field">
                 <label>email</label>
-                <input type="text"   formControlName="email"
-                [ngClass]="{'border-danger': this.accountform.controls['email'].touched && this.accountform.controls['email'].invalid}"
-                pInputText>
+                <input type="text" formControlName="email"
+                    [ngClass]="{'border-danger': accountform.controls['email'].touched && accountform.controls['email'].invalid}"
+                    pInputText>
+                <small class="text-danger"
+                    *ngIf="accountform.controls['email'].touched  && accountform.controls['email'].invalid   ">email
+                    required </small>
             </div>
-            <div class="password">
+            <div class="field">
                 <label>password</label>
-                <input type="text"    formControlName="password"  pInputText>
+                <input type="text" formControlName="password" pInputText>
+                
             </div>
-            <div class="confirmpassword">
+            <div class="field">
                 <label>confirm password</label>
-                <input type="text"  formControlName="confirmpassword" pInputText>
+                <input type="text" formControlName="confirmpassword" pInputText>
             </div>
 
-            <div class="submit">
-                <p-button   type="submit" label="Submit"></p-button>
+            <div class="accountbtn">
+                <p-button type="submit" label="Submit"></p-button>
             </div>
         </form>
     </div>

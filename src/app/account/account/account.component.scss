@@ -1,0 +1,29 @@
+.createaccount{
+padding: 10rem;
+}
+
+.title{
+    justify-content: center;
+   padding: 2rem;
+    align-items:  center;
+    display: flex;
+}
+
+.field{
+    padding: 1rem;
+   display: grid;
+grid-template-columns:20rem;
+justify-content: center;
+
+    label{
+        font-size: 1rem;
+        font-weight: 200;
+    }
+  
+}
+
+.accountbtn{
+    justify-content: center;
+    display: flex;
+    padding: 1rem;
+}
