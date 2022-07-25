@@ -18,13 +18,13 @@
                     [ngClass]="{'border-danger': accountform.controls['email'].touched && accountform.controls['email'].invalid}"
                     pInputText>
                 <small class="text-danger"
-                    *ngIf="accountform.controls['email'].touched  && accountform.controls['email'].invalid   ">email
-                    required </small>
+                    *ngIf="accountform.controls['email'].touched  && accountform.controls['email'].invalid"> 
+                    email required </small>
             </div>
             <div class="field">
                 <label>password</label>
                 <input type="text" formControlName="password" pInputText>
-                
+
             </div>
             <div class="field">
                 <label>confirm password</label>
