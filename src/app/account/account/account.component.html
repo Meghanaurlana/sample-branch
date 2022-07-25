@@ -1,0 +1,31 @@
+<div class="createaccount">
+    <div class="title">
+        <h1 class="create">createaccount</h1>
+    </div>
+    <div class="details">
+        <form [formGroup]="accountform" (ngSubmit)="onsubmit()">
+            <div class="name">
+                <label>name</label>
+                <input type="text" formControlName="name"    *ngIf="this.accountform.controls['name']" pInputText>
+            </div>
+            <div class="email">
+                <label>email</label>
+                <input type="text"   formControlName="email"
+                [ngClass]="{'border-danger': this.accountform.controls['email'].touched && this.accountform.controls['email'].invalid}"
+                pInputText>
+            </div>
+            <div class="password">
+                <label>password</label>
+                <input type="text"    formControlName="password"  pInputText>
+            </div>
+            <div class="confirmpassword">
+                <label>confirm password</label>
+                <input type="text"  formControlName="confirmpassword" pInputText>
+            </div>
+
+            <div class="submit">
+                <p-button   type="submit" label="Submit"></p-button>
+            </div>
+        </form>
+    </div>
+</div>

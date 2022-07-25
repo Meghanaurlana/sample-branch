@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveformsComponent } from './reactiveforms/reactiveforms/reactiveforms.component';
+import { AccountComponent } from './account/account/account.component';
+import { ChildComponent } from './parentchid/parent/child/child.component';
+import { ParentComponent } from './parentchid/parent/parent.component';
+
 
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "reactiveforms", pathMatch: "full" },
-  { path: "reactiveforms", component: ReactiveformsComponent }
-
+  // { path: "", redirectTo: "", pathMatch: "full" },
+  { path: "accounts", component: AccountComponent },
+  { path: "parent", component: ParentComponent },
+  { path: "child", component: ChildComponent }
 ];
 
 @NgModule({
