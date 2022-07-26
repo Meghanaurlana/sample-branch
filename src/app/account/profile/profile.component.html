@@ -1,19 +1,43 @@
-<p-table  responsiveLayout="scroll">
+<div class="main">
+    <h1>hello</h1>
+    <div class="accountbtn">
+        <a routerLink="/addedit">      <p-button type="" label="add"   ></p-button></a>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container"><p-table [value]="product" responsiveLayout="scroll">
     <ng-template pTemplate="header">
         <tr>
             <th>name</th>
             <th>email</th>
             <th>phone number</th>
-            <th>Quantity</th>
+           
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
+    <ng-template pTemplate="body" let-product let-columns="product" let-rowIndex="rowIndex">
         <tr>
-            <td>{{product.code}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.category}}</td>
-            <td>{{product.quantity}}</td>
+          
+            <td>{{product.Name}}</td>
+            <td>{{product.EmailAddress}}</td>
+            <td>{{product.PhoneNumber}}</td>
+
+            <td>
+                <div class="accountbtn">
+                    <a routerLink="/addedit">         <p-button type="" label="edit" ></p-button></a>
+                </div></td>
+                <td>
+                    <div class="accountbtn">
+                       <p-button type="" label="delete"  (click)="accountdel(rowIndex)"   ></p-button>
+                    </div></td>
         </tr>
     </ng-template>
 </p-table>
+
+</div>
+
 

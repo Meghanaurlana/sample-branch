@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,34 +16,45 @@ export class AccountComponent implements OnInit {
   constructor(private fb: FormBuilder, private router:Router) {
   this.accountform = fb.group({})
   }
-  ngOnInit(): void {
+  ngOnInit(){
 
     this.accountform = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
       ]),
-      email: new FormControl('', [
+      email: new FormControl('',[
         Validators.required,
         Validators.email,
 
       ]),    
-    phoneno: new FormControl('', [
+    phoneno: new FormControl('',[
         Validators.required,
         Validators.minLength(10),
       ]),
-      
+     
     })
+
+
+
+
+    
   }
   onSubmit(){
+      this.accountform.markAllAsTouched();
+      if(this.accountform.valid){
+        this.router.navigateByUrl('/profile');
+      }
   
-    this.accountform.markAllAsTouched();
-    this.router.navigateByUrl('/profile');
+
      }
 
-
-    //  view(){
-    //   // console.log("hello")
-    //   console.log(this.accountform.value)
-    //  }
+hello(){
+  localStorage.setItem(this.accountform.value,JSON.stringify(this.accountform.value))
+  console.log(localStorage.getItem(this.accountform.value))
+}
+ 
 } 
+
+
+

@@ -10,11 +10,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
+import { AddEditComponent } from './add-edit/add-edit.component';
 
 @NgModule({
   declarations: [
     AccountComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddEditComponent
   ],
   imports: [
     CommonModule,

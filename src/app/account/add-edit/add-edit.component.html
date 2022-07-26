@@ -1,0 +1,36 @@
+<div class="addedit">
+    <form [formGroup]="addeditform" (ngSubmit)="onSubmit()">
+        <div class="fields">
+            <label>name</label>
+            <input type="text" formControlName="name"
+            [ngClass]="{'border-danger': addeditform.controls['name'].touched && addeditform.controls['name'].invalid}"
+            pInputText>
+            <small class="text-danger"
+                *ngIf="addeditform.controls['name'].touched  && addeditform.controls['name'].invalid ">*name is required
+            </small>
+            <!-- <small>{{addeditform.controls['name'].value}}</small> -->
+        </div>
+        <div class="fields">
+            <label>email</label>
+            <input type="text" formControlName="email"
+                [ngClass]="{'border-danger': addeditform.controls['email'].touched && addeditform.controls['email'].invalid}"
+                pInputText>
+                <small class="text-danger"
+                *ngIf="addeditform.controls['email'].touched  && addeditform.controls['email'].invalid ">*email is requird
+            </small>
+        </div>
+        <div class="fields">
+            <label>phone number</label>
+            <input type="number" formControlName="phoneno"
+            [ngClass]="{'border-danger': addeditform.controls['phoneno'].touched && addeditform.controls['phoneno'].invalid}"
+            pInputText>
+            <small class="text-danger"
+            *ngIf="addeditform.controls['phoneno'].touched  && addeditform.controls['phoneno'].invalid ">*Phone Number is required
+        </small>
+
+        </div>
+        <div class="addeditbtn">
+            <p-button type="submit" label="submit"   ></p-button>
+         </div>
+    </form>
+</div>
