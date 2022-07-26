@@ -7,9 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { BrowserModule } from '@angular/platform-browser';
+import { ProfileComponent } from './profile/profile.component';
+import { RouterModule } from '@angular/router';
+import { TableModule } from 'primeng/table';
+
 @NgModule({
   declarations: [
-    AccountComponent
+    AccountComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +23,9 @@ import { BrowserModule } from '@angular/platform-browser';
     ReactiveFormsModule,
     ButtonModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule,
+    TableModule
   ]
 })
 export class AccountModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -8,7 +9,10 @@ import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
 })
 export class AccountComponent implements OnInit {
   accountform =  new FormGroup({});
-  constructor(private fb: FormBuilder) {
+
+
+ 
+  constructor(private fb: FormBuilder, private router:Router) {
   this.accountform = fb.group({})
   }
   ngOnInit(): void {
@@ -23,19 +27,17 @@ export class AccountComponent implements OnInit {
         Validators.email,
 
       ]),    
-      password: new FormControl('', [
+    phoneno: new FormControl('', [
         Validators.required,
-        Validators.minLength(8),
+        Validators.minLength(10),
       ]),
-          confirmpassword: new FormControl('', [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
+      
     })
   }
   onSubmit(){
   
-    this.accountform.markAllAsTouched()
+    this.accountform.markAllAsTouched();
+    this.router.navigateByUrl('/profile');
      }
 
 
