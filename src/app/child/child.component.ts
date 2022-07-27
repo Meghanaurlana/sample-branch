@@ -15,7 +15,7 @@ export class ChildComponent implements OnInit {
 
   ngOnInit(): void {
     this.app.newmessage.subscribe(newmessage  =>this.message = newmessage)
-    this.app.newmessages.subscribe(newmessages =>this.message=newmessages)
+    // this.app.newmessages.subscribe(newmessages =>this.message=newmessages)
   }
 
   child(){
