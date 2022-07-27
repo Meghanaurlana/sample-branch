@@ -1,7 +1,11 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { observable } from 'rxjs';
+import { AccountService } from '../account.service';
+
 
 @Component({
   selector: 'app-account',
@@ -9,52 +13,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
-  accountform =  new FormGroup({});
+  accountform = new FormGroup({});
 
 
- 
-  constructor(private fb: FormBuilder, private router:Router) {
-  this.accountform = fb.group({})
+
+  constructor(private fb: FormBuilder, private router: Router, private service: AccountService) {
+    this.accountform = fb.group({})
   }
-  ngOnInit(){
+  ngOnInit() {
 
     this.accountform = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
       ]),
-      email: new FormControl('',[
+      email: new FormControl('', [
         Validators.required,
         Validators.email,
 
-      ]),    
-    phoneno: new FormControl('',[
+      ]),
+      phoneno: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
       ]),
-     
+
     })
 
 
 
 
-    
+
   }
-  onSubmit(){
-      this.accountform.markAllAsTouched();
-      if(this.accountform.valid){
-        this.router.navigateByUrl('/profile');
-      }
-  
+  onSubmit() {
+    this.accountform.markAllAsTouched();
+    if (this.accountform.valid) {
+      this.router.navigateByUrl('/profile');
+    }
 
-     }
 
-hello(){
-  localStorage.setItem(this.accountform.value,JSON.stringify(this.accountform.value))
-  console.log(localStorage.getItem(this.accountform.value))
+  }
+
+
+
+
 }
- 
-} 
 
 
 

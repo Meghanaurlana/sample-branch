@@ -1,21 +1,21 @@
-.addedit{
-    padding:7rem ;
+.addedit {
+    padding: 7rem;
 }
 
-.fields{
+.fields {
     padding: 1rem;
-   display: grid;
-grid-template-columns:20rem;
-justify-content: center;
+    display: grid;
+    grid-template-columns: 20rem;
+    justify-content: center;
 
-    label{
+    label {
         font-size: 1rem;
         font-weight: 200;
     }
-  
+
 }
 
-.addeditbtn{
+.addeditbtn {
     justify-content: center;
     display: flex;
     padding: 1rem;
