@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import { Injectable } from '@angular/core';
 // import { Observable, of } from 'rxjs';
 
@@ -61,7 +60,7 @@
 
 //   return text;
 // }
-=======
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
@@ -84,19 +83,9 @@ export class AccountService {
   }
 }
 
-
-
-
-
-
-
-
-
-
 export interface userdata {
   id?: number;
   name: string;
   email: string;
   phoneno: string
 }
->>>>>>> 3dc7dfccd2250b3006ce350a9627382
