@@ -7,10 +7,11 @@
             <div class="field">
                 <label>name</label>
                 <input type="text" formControlName="name"
-                [ngClass]="{'border-danger': accountform.controls['name'].touched && accountform.controls['name'].invalid}"
-                pInputText>
+                    [ngClass]="{'border-danger': accountform.controls['name'].touched && accountform.controls['name'].invalid}"
+                    pInputText>
                 <small class="text-danger"
-                    *ngIf="accountform.controls['name'].touched  && accountform.controls['name'].invalid ">*name is required
+                    *ngIf="accountform.controls['name'].touched  && accountform.controls['name'].invalid ">*name is
+                    required
                 </small>
                 <!-- <small>{{accountform.controls['name'].value}}</small> -->
             </div>
@@ -19,22 +20,24 @@
                 <input type="text" formControlName="email"
                     [ngClass]="{'border-danger': accountform.controls['email'].touched && accountform.controls['email'].invalid}"
                     pInputText>
-                    <small class="text-danger"
-                    *ngIf="accountform.controls['email'].touched  && accountform.controls['email'].invalid ">*email is requird
+                <small class="text-danger"
+                    *ngIf="accountform.controls['email'].touched  && accountform.controls['email'].invalid ">*email is
+                    requird
                 </small>
             </div>
             <div class="field">
                 <label>phone number</label>
                 <input type="number" formControlName="phoneno"
-                [ngClass]="{'border-danger': accountform.controls['phoneno'].touched && accountform.controls['phoneno'].invalid}"
-                pInputText>
+                    [ngClass]="{'border-danger': accountform.controls['phoneno'].touched && accountform.controls['phoneno'].invalid}"
+                    pInputText>
                 <small class="text-danger"
-                *ngIf="accountform.controls['phoneno'].touched  && accountform.controls['phoneno'].invalid ">*Phone Number is required
-            </small>
+                    *ngIf="accountform.controls['phoneno'].touched  && accountform.controls['phoneno'].invalid ">*Phone
+                    Number is required
+                </small>
 
-            <div class="accountbtn">
-                <p-button type="submit" label="Submit"  (onClick)="hello()"  ></p-button>
-            </div>
+                <div class="accountbtn">
+                    <p-button type="submit" label="Submit" ></p-button>
+                </div>
             </div>
         </form>
     </div>

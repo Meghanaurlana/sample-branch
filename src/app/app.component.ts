@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'sample';
 
   public children = '';
- public value: string | undefined;
+  public value: string | undefined;
 
   onclick() {
     this.value = "This is from parent"

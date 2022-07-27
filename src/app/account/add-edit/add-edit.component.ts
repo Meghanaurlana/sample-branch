@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup,Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -9,40 +9,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-edit.component.scss']
 })
 export class AddEditComponent implements OnInit {
-  addeditform =  new FormGroup({});
+  addeditform = new FormGroup({});
 
 
- 
-  constructor(private fb: FormBuilder, private router:Router) {
-  this.addeditform = fb.group({})
+
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.addeditform = fb.group({})
   }
-  ngOnInit(){
+  ngOnInit() {
 
     this.addeditform = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
       ]),
-      email: new FormControl('',[
+      email: new FormControl('', [
         Validators.required,
         Validators.email,
 
-      ]),    
-    phoneno: new FormControl('',[
+      ]),
+      phoneno: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
       ]),
-     
+
     })
   }
 
   onSubmit(): void {
     this.addeditform.markAllAsTouched();
-    if(this.addeditform.valid){
+    if (this.addeditform.valid) {
       this.router.navigateByUrl('/profile');
     }
-    
-   
+
+
 
   }
 

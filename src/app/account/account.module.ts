@@ -11,7 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { AddEditComponent } from './add-edit/add-edit.component';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AccountComponent,
@@ -22,6 +22,7 @@ import { AddEditComponent } from './add-edit/add-edit.component';
     CommonModule,
     InputTextModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     ButtonModule,
     BrowserAnimationsModule,

@@ -1,28 +1,28 @@
-.createaccount{
-padding: 3rem;
+.createaccount {
+    padding: 3rem;
 }
 
-.title{
+.title {
     justify-content: center;
-   padding: 2rem;
-    align-items:  center;
+    padding: 2rem;
+    align-items: center;
     display: flex;
 }
 
-.field{
+.field {
     padding: 1rem;
-   display: grid;
-grid-template-columns:20rem;
-justify-content: center;
+    display: grid;
+    grid-template-columns: 20rem;
+    justify-content: center;
 
-    label{
+    label {
         font-size: 1rem;
         font-weight: 200;
     }
-  
+
 }
 
-.accountbtn{
+.accountbtn {
     justify-content: center;
     display: flex;
     padding: 1rem;
