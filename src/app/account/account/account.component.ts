@@ -48,15 +48,16 @@ export class AccountComponent implements OnInit {
   onSubmit() {
     this.accountform.markAllAsTouched();
     if (this.accountform.valid) {
+      this.accountservice.addUser(this.accountform.value)
       this.router.navigateByUrl('/profile');
     }
 
   }
 
-  accountuser() {
-    this.accountservice.accountuser(this.accountform.value);
+  // accountuser() {
+  //   this.accountservice.accountuser(this.accountform.value);
 
-  }
+  // }
 
 }
 
