@@ -8,6 +8,14 @@
 
 //   constructor() { }
 
+
+
+//   accountuser(user:UsersData):Observable<string>{
+//     user.id=makeid()
+//     usersData.push(user);
+//     return of ('registerd')
+//   }
+
 //   addUser(user: UsersData): Observable<string> {
 //     user.id = makeid()
 //     usersData.push(user);
@@ -62,13 +70,21 @@
 // }
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+  private subject = new Subject<string>();
+  constructor() { }
 
-  constructor(private http: HttpClient) { }
+  accountuser(message: string) {
+    this.subject.next(message)
+  }
+
+  profileusers(): Observable<string> {
+    return this.subject.asObservable();
+  }
   add() {
 
   }

@@ -9,13 +9,16 @@ import { AccountService } from '../account.service';
 export class ProfileComponent implements OnInit {
   product: Product[] = [];
 
-
-  constructor(private router: Router, private service:AccountService) { }
+  message: any;
+  constructor(private router: Router, private accountservice: AccountService) { }
 
   ngOnInit() {
 
     this.product = tableData
+    this.accountservice.profileusers().subscribe((d) => {
+      this.message = d;
 
+    })
   }
 
 

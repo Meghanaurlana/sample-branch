@@ -1,4 +1,5 @@
 import { JsonPipe } from '@angular/common';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,10 +15,10 @@ import { AccountService } from '../account.service';
 })
 export class AccountComponent implements OnInit {
   accountform = new FormGroup({});
+  message: any;
 
 
-
-  constructor(private fb: FormBuilder, private router: Router, private service: AccountService) {
+  constructor(private fb: FormBuilder, private router: Router, private accountservice: AccountService) {
     this.accountform = fb.group({})
   }
   ngOnInit() {
@@ -50,11 +51,12 @@ export class AccountComponent implements OnInit {
       this.router.navigateByUrl('/profile');
     }
 
-
   }
 
+  accountuser() {
+    this.accountservice.accountuser(this.accountform.value);
 
-
+  }
 
 }
 
