@@ -5,6 +5,7 @@ import { AddEditComponent } from './account/add-edit/add-edit.component';
 import { ProfileComponent } from './account/profile/profile.component';
 import { NewComponent } from './new/new.component';
 import { ChildComponent } from './child/child.component';
+import { HelloComponent } from './hello/hello.component';
 
 
 
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: "child", component: ChildComponent },
   { path: "profile", component: ProfileComponent },
   { path: "addedit", component: AddEditComponent },
-  { path: "new", component: NewComponent }
+  { path: "new", component: NewComponent },
+  { path: "hello", component: HelloComponent }
 ];
 
 @NgModule({

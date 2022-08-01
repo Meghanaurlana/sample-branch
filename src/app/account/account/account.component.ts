@@ -52,7 +52,8 @@ export class AccountComponent implements OnInit {
       this.router.navigateByUrl('/profile');
     }
 
-  }
+  } 
+ 
 
   // accountuser() {
   //   this.accountservice.accountuser(this.accountform.value);

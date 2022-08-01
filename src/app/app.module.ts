@@ -8,7 +8,8 @@ import { ChildComponent } from './child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccountModule } from './account/account.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NewComponent } from './new/new.component'
+import { NewComponent } from './new/new.component';
+import { HelloComponent } from './hello/hello.component'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NewComponent } from './new/new.component'
 
     ChildComponent,
      NewComponent,
+     HelloComponent,
 
   ],
   imports: [

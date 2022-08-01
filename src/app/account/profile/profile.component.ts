@@ -14,9 +14,21 @@ user:any;
 
   ngOnInit() {
 
+  
+      // this.accountservice.stringSubject.subscribe(
+      //   e=> 
+      //   {
+      //     console.log('next subscribed value: ' + this.user);
+      //     this.users = e as unknown as UsersData[];
+      //   }
+      // );
+  
+
+
+
 
     this.accountservice.fetchUser().subscribe(e => {
-      this.users = e as UsersData[];
+      this.user = e ;
 
     })
     // const  userObservable = this.accountservice.fetchUser();
@@ -43,11 +55,11 @@ user:any;
   }
 
   add() {
-    this.accountservice.fetchUser().subscribe(e => {
-      this.users = e as UsersData[];
+    // this.accountservice.fetchUser().subscribe(e => {
+    //   this.users = e as UsersData[];
 
     this.router.navigateByUrl('/addedit')
-  })
+  // })
 
 }
 

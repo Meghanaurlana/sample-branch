@@ -11,26 +11,78 @@ user:any;
   
   constructor() { }
 
+  private newUser = new BehaviorSubject<any>({
+  });
+
+
+  addUser(user: any) {
+    this.newUser.next(user);
+  }
+
+  fetchUser() {
+    return this.newUser.asObservable();
+  }
 
 
 
-  public addUser(user:UsersData):any |string|undefined{
-    const userObservable = new Observable(observer =>{
-      user.id = makeid()
-      observer.next(this.usersData)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // addUser(user: any): Observable<string> {
+  //   user.id = makeid()
+  //   usersData.push(user);
+  //   return of("Sucessfully Added")
+  // }
+
+
+
+  // fetchUser(id?: string): Observable<UsersData | UsersData[] | undefined> {
+  //   if (id)
+  //     return of(usersData.find(e => e.id === id));
+  //   else
+  //     return of(usersData)
+  // }
+
+  // public addUser(user:UsersData):any |string|undefined{
+  //   const userObservable = new Observable(observer =>{
+  //     user.id = makeid()
+  //     usersData.push(user);
+  //     observer.next(this.usersData)
       
-    })
-    return of("Sucessfully Added")
-  }
+  //   })
+
+  // }
 
 
 
-  fetchUser(id?: string): Observable<UsersData | UsersData[] | undefined> {
-    if (id)
-      return of(usersData.find(e => e.id === id));
-    else
-      return of(usersData)
-  }
+  // fetchUser(id?: string): Observable<UsersData | UsersData[] | undefined> {
+  //   if (id)
+  //     return of(usersData.find(e => e.id === id));
+  //   else
+  //     return of(usersData)
+  // }
 
 
   // deleteUser(id: string): Observable<string> {
@@ -48,7 +100,7 @@ user:any;
 let usersData: UsersData[] = [];
 
 export interface UsersData {
-  users: UsersData[];
+
 
   id?: string;
   name: string;

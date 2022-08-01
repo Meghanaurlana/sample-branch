@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import { HttpClientModule } from '@angular/common/http'
+import { AccountService } from './account.service';
 @NgModule({
   declarations: [
     AccountComponent,
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     RouterModule,
     TableModule
-  ]
+  ],
+  providers: [AccountService]
 })
 export class AccountModule { }
