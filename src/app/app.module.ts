@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccountModule } from './account/account.module';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { NewComponent } from './new/new.component'
 
 @NgModule({
   declarations: [
     AppComponent,
 
     ChildComponent,
+     NewComponent,
 
   ],
   imports: [

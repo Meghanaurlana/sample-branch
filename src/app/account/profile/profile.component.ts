@@ -16,6 +16,8 @@ export class ProfileComponent implements OnInit {
 
     this.accountservice.fetchUser().subscribe(e => {
       this.users = e as UsersData[];
+
+    
     })
 
     // this.product = tableData
@@ -27,13 +29,16 @@ export class ProfileComponent implements OnInit {
 
 
   accountdel(x: number) {
-    // this.product.splice(x, 1);
+    this.users.splice(x, 1);
   }
 
   add() {
+    this.accountservice.fetchUser().subscribe(e => {
+      this.users = e as UsersData[];
+
     this.router.navigateByUrl('/addedit')
-  }
+  })
 
 }
 
-
+}

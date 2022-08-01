@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AccountService } from '../account.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class AddEditComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private accountservice:AccountService) {
     this.addeditform = fb.group({})
   }
   ngOnInit() {
@@ -39,6 +40,7 @@ export class AddEditComponent implements OnInit {
   onSubmit(): void {
     this.addeditform.markAllAsTouched();
     if (this.addeditform.valid) {
+      this.accountservice.addUser(this.addeditform.value)
       this.router.navigateByUrl('/profile');
     }
 

@@ -8,25 +8,23 @@ export class AccountService {
 
   constructor() { }
 
-
-
-
-
   addUser(user: any): Observable<string> {
     user.id = makeid()
     usersData.push(user);
     return of("Sucessfully Added")
   }
 
-  editUser(user: UsersData): Observable<string> {
-    if (usersData.find(e => e.id === user.id)) {
-      usersData.find(e => e.id === user.id)!.email = user.email;[]
-      usersData.find(e => e.id === user.id)!.name = user.name;
-      usersData.find(e => e.id === user.id)!.phoneno = user.phoneno;
-      return of("Sucessfully Updated")
-    }
-    return of("Inavlid ID")
-  }
+
+  // editUser(user: UsersData): Observable<string> {
+  //   if (usersData.find(e => e.id === user.id)) {
+  //     usersData.find(e => e.id === user.id)!.email = user.email;[]
+  //     usersData.find(e => e.id === user.id)!.name = user.name;
+  //     usersData.find(e => e.id === user.id)!.phoneno = user.phoneno;
+  //     return of("Sucessfully Updated")
+  //   }
+  //   return of("Inavlid ID")
+  // }
+
 
   fetchUser(id?: string): Observable<UsersData | UsersData[] | undefined> {
     if (id)
@@ -35,14 +33,14 @@ export class AccountService {
       return of(usersData)
   }
 
-  deleteUser(id: string): Observable<string> {
-    let index = usersData.findIndex(e => e.id === id);
-    if (index) {
-      usersData.splice(index, 1);
-      return of("Sucessfully Deleted")
-    }
-    return of("Invalid ID")
-  }
+  // deleteUser(id: string): Observable<string> {
+  //   let index = usersData.findIndex(e => e.id === id);
+  //   if (index) {
+  //     usersData.splice(index, 1);
+  //     return of("Sucessfully Deleted")
+  //   }
+  //   return of("Invalid ID")
+  // }
 
 }
 
@@ -64,40 +62,3 @@ function makeid() {
 
   return text;
 }
-
-// import { Injectable } from '@angular/core';
-// import { Observable, Subject } from 'rxjs';
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AccountService {
-//   private subject = new Subject<string>();
-//   constructor() { }
-
-//   accountuser(message: string) {
-//     this.subject.next(message)
-//   }
-
-//   profileusers(): Observable<string> {
-//     return this.subject.asObservable();
-//   }
-//   add() {
-
-//   }
-//   update() {
-
-//   }
-//   delete() {
-
-//   }
-//   read() {
-
-//   }
-// }
-
-// export interface userdata {
-//   id?: number;
-//   name: string;
-//   email: string;
-//   phoneno: string
-// }
