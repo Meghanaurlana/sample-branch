@@ -8,15 +8,21 @@ import { AccountService, UsersData } from '../account.service';
 })
 export class ProfileComponent implements OnInit {
   users: UsersData[] = [];
-
   message: any;
+user:any;
   constructor(private router: Router, private accountservice: AccountService) { }
 
   ngOnInit() {
 
-    this.accountservice.fetchUser().subscribe(e => {
-      this.users = e as UsersData[];
+    const  userObservable = this.accountservice.fetchUser();
+    userObservable.subscribe(e => {
+       this.users =e as UsersData[];
     })
+
+ 
+    // this.accountservice.fetchUser().subscribe(e => {
+    //   this.users = e as UsersData[];
+    // })
 
     // this.product = tableData
     // this.accountservice.profileusers().subscribe((d) => {
