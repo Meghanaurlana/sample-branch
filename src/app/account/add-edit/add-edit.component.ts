@@ -37,10 +37,15 @@ export class AddEditComponent implements OnInit {
     })
   }
 
-  onSubmit(): void {
+  onSubmit(){
     this.addeditform.markAllAsTouched();
     if (this.addeditform.valid) {
-      this.accountservice.addUser(this.addeditform.value)
+      // this.accountservice.addUser(this.addeditform.value)
+      this.accountservice.users.push(this.addeditform.value)
+      console.log( this.accountservice.users);
+      this.accountservice.addUser(this.accountservice.users)
+      console.log( this.accountservice.users);
+    
       this.router.navigateByUrl('/profile');
     }
 

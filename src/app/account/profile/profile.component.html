@@ -15,13 +15,13 @@
                     <th>delete</th>
 
                 </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-user let-columns="user" let-rowIndex="rowIndex">
-                <tr>
+                <!-- </ng-template>
+            <ng-template pTemplate="body" let-user let-columns="user" let-rowIndex="rowIndex"> -->
+                <tr *ngFor="let use of user; index as i; first as isFirst">
 
-                    <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.phoneno}}</td>
+                    <td>{{use.name}}</td>
+                    <td>{{use.email}}</td>
+                    <td>{{use.phoneno}}</td>
 
                     <td>
                         <div class="addbtn">
@@ -30,20 +30,13 @@
                     </td>
                     <td>
                         <div class="delbtn">
-                            <p-button type="" label="delete" (click)="accountdel(rowIndex)"></p-button>
+                            <p-button type="" label="delete"></p-button>
                         </div>
                     </td>
                 </tr>
+
+
             </ng-template>
         </p-table>
-        {{message}}
+        <!-- {{message}} -->
     </div>
-
-
-
-<table>
-    <td>{{user.name}}</td>
-    <td>{{user.email}}</td>
-    <td>{{user.phoneno}}</td>
-</table>
-         

@@ -11,11 +11,12 @@ user:any;
   
   constructor() { }
 
-  private newUser = new BehaviorSubject<any>({
-  });
+  private newUser = new BehaviorSubject<UsersData[]>({
+  }as any);
 
 
-  addUser(user: any) {
+  addUser(user:UsersData[]) {
+    console.log("user:",user)
     this.newUser.next(user);
   }
 
@@ -23,28 +24,16 @@ user:any;
     return this.newUser.asObservable();
   }
 
+}
+let usersData: UsersData[] = [];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export interface UsersData {
+  id?: string;
+  name: string;
+  email: string;
+  phoneno: string;
+}
+  
 
 
 
@@ -96,27 +85,21 @@ user:any;
 
 
 
-}
-let usersData: UsersData[] = [];
+// }
+// let usersData: UsersData[] = [];
 
-export interface UsersData {
+// export interface UsersData {
 
 
-  id?: string;
-  name: string;
-  email: string;
-  phoneno: string;
-}
+//   id?: string;
+//   name: string;
+//   email: string;
+//   phoneno: string;
+// }
   
-
-
-
-
 
 // private readonly stops Subject: BehaviorSubject<stopResponse[]>=new BehaviorSubject([]);
 // this.stopsubject.next(stop)
-
-
 
 
 //   addUser(user: any): Observable<string> {
@@ -153,18 +136,16 @@ export interface UsersData {
 
 // }
 
+// function makeid() {
+//   var text = "";
+//   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+//   for (var i = 0; i < 5; i++)
+//     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-function makeid() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//   return text;
 
-  for (var i = 0; i < 5; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-  return text;
-
-}
+// }
 
 // import { Injectable } from '@angular/core';
 // import { Observable, Subject } from 'rxjs';
@@ -203,15 +184,6 @@ function makeid() {
 //   phoneno: string
 // }
 
-
-
-
-
-
-
-
-
-
 // export class MessageService {
 //   message(value: any) {
 //     throw new Error('Method not implemented.');
@@ -234,8 +206,6 @@ function makeid() {
 //   {
 //     return this.http.get(this.url);
 //   }
-
-
 
 // sendMessage(message:string){
 //   this.subject.next(message)

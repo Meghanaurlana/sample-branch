@@ -9,35 +9,36 @@ import { AccountService, UsersData } from '../account.service';
 export class ProfileComponent implements OnInit {
   users: UsersData[] = [];
   message: any;
-user:any;
+  user: any;
   constructor(private router: Router, private accountservice: AccountService) { }
 
   ngOnInit() {
 
-  
-      // this.accountservice.stringSubject.subscribe(
-      //   e=> 
-      //   {
-      //     console.log('next subscribed value: ' + this.user);
-      //     this.users = e as unknown as UsersData[];
-      //   }
-      // );
-  
-
-
-
-
     this.accountservice.fetchUser().subscribe(e => {
-      this.user = e ;
-
+      console.log("e:",e)
+      this.user = e as unknown as UsersData[];
     })
+
+    console.log("Users:",this.user)
+
+
     // const  userObservable = this.accountservice.fetchUser();
     // userObservable.subscribe(e => {
     //    this.users =e as UsersData[];
 
     // })
 
- 
+
+    // this.accountservice.stringSubject.subscribe(
+    //   e=> 
+    //   {
+    //     console.log('next subscribed value: ' + this.user);
+    //     this.users = e as unknown as UsersData[];
+    //   }
+    // );
+
+
+
     // this.accountservice.fetchUser().subscribe(e => {
     //   this.users = e as UsersData[];
     // })
@@ -47,7 +48,7 @@ user:any;
     //   this.message = d;
 
     // })
-  
+
 
   }
   accountdel(x: number) {
@@ -59,8 +60,8 @@ user:any;
     //   this.users = e as UsersData[];
 
     this.router.navigateByUrl('/addedit')
-  // })
+    // })
 
-}
+  }
 
 }
