@@ -15,11 +15,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     this.accountservice.fetchUser().subscribe(e => {
-      console.log("e:",e)
+      // console.log("e:",e)
       this.user = e as unknown as UsersData[];
     })
 
-    console.log("Users:",this.user)
+    // console.log("Users:",this.user)
 
 
     // const  userObservable = this.accountservice.fetchUser();
@@ -51,8 +51,14 @@ export class ProfileComponent implements OnInit {
 
 
   }
-  accountdel(x: number) {
-    this.users.splice(x, 1);
+  accountdel(x:any) {
+    this.user.splice(x, 1);
+    ;
+    
+  }
+
+  edit(){
+    this.router.navigateByUrl('/addedit')
   }
 
   add() {
