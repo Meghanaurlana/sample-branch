@@ -1,12 +1,25 @@
 <div class="addedit">
     <form [formGroup]="addeditform" (ngSubmit)="onSubmit()">
         <div class="fields">
-            <label>name</label>
-            <input type="text" formControlName="name"
-                [ngClass]="{'border-danger': addeditform.controls['name'].touched && addeditform.controls['name'].invalid}"
+            <label>first name</label>
+            <input type="text" formControlName="firstName"
+                [ngClass]="{'border-danger': addeditform.controls['firstName'].touched && addeditform.controls['firstName'].invalid}"
                 pInputText>
             <small class="text-danger"
-                *ngIf="addeditform.controls['name'].touched  && addeditform.controls['name'].invalid ">*name is required
+                *ngIf="addeditform.controls['firstName'].touched  && addeditform.controls['firstName'].invalid ">*firstName is
+                required
+            </small>
+            <!-- <small>{{addeditform.controls['name'].value}}</small> -->
+        </div>
+
+        <div class="fields">
+            <label>last name</label>
+            <input type="text" formControlName="lastName"
+                [ngClass]="{'border-danger': addeditform.controls['lastName'].touched && addeditform.controls['lastName'].invalid}"
+                pInputText>
+            <small class="text-danger"
+                *ngIf="addeditform.controls['lastName'].touched  && addeditform.controls['lastName'].invalid ">*lastName is
+                required
             </small>
             <!-- <small>{{addeditform.controls['name'].value}}</small> -->
         </div>

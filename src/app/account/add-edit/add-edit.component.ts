@@ -20,7 +20,11 @@ export class AddEditComponent implements OnInit {
   ngOnInit() {
 
     this.addeditform = this.fb.group({
-      name: new FormControl('', [
+      firstName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+      lastName: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
       ]),
@@ -42,9 +46,9 @@ export class AddEditComponent implements OnInit {
     if (this.addeditform.valid) {
       // this.accountservice.addUser(this.addeditform.value)
       this.accountservice.users.push(this.addeditform.value)
-      console.log( this.accountservice.users);
+      // console.log( this.accountservice.users);
       this.accountservice.addUser(this.accountservice.users)
-      console.log( this.accountservice.users);
+      // console.log( this.accountservice.users);
     
       this.router.navigateByUrl('/profile');
     }

@@ -5,16 +5,31 @@
     <div class="details">
         <form [formGroup]="accountform" (ngSubmit)="onSubmit()">
             <div class="field">
-                <label>name</label>
-                <input type="text" formControlName="name"
-                    [ngClass]="{'border-danger': accountform.controls['name'].touched && accountform.controls['name'].invalid}"
+                <label>first name</label>
+                <input type="text" formControlName="firstName"
+                    [ngClass]="{'border-danger': accountform.controls['firstName'].touched && accountform.controls['firstName'].invalid}"
                     pInputText>
                 <small class="text-danger"
-                    *ngIf="accountform.controls['name'].touched  && accountform.controls['name'].invalid ">*name is
+                    *ngIf="accountform.controls['firstName'].touched  && accountform.controls['firstName'].invalid ">*firstName is
                     required
                 </small>
                 <!-- <small>{{accountform.controls['name'].value}}</small> -->
             </div>
+
+            <div class="field">
+                <label>last name</label>
+                <input type="text" formControlName="lastName"
+                    [ngClass]="{'border-danger': accountform.controls['lastName'].touched && accountform.controls['lastName'].invalid}"
+                    pInputText>
+                <small class="text-danger"
+                    *ngIf="accountform.controls['lastName'].touched  && accountform.controls['lastName'].invalid ">*lastName is
+                    required
+                </small>
+                <!-- <small>{{accountform.controls['name'].value}}</small> -->
+            </div>
+
+
+
             <div class="field">
                 <label>email</label>
                 <input type="text" formControlName="email"

@@ -20,6 +20,10 @@ user:any;
     this.newUser.next(user);
   }
 
+  edituser(user:UsersData[]){
+  
+  }
+
   fetchUser() {
     return this.newUser.asObservable();
   }
@@ -29,7 +33,8 @@ let usersData: UsersData[] = [];
 
 export interface UsersData {
   id?: string;
-  name: string;
+  firstName: string;
+lastName:string;
   email: string;
   phoneno: string;
 }

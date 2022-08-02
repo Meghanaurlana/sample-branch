@@ -24,10 +24,15 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
 
     this.accountform = this.fb.group({
-      name: new FormControl('', [
+      firstName: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
       ]),
+      lastName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(2),
+      ]),
+
       email: new FormControl('', [
         Validators.required,
         Validators.email,
@@ -48,7 +53,9 @@ export class AccountComponent implements OnInit {
   onSubmit() {
     this.accountform.markAllAsTouched();
     if (this.accountform.valid) {
-      this.accountservice.addUser(this.accountform.value)
+      this.accountservice.users.push(this.accountform.value)
+      // console.log( this.accountservice.users);
+      this.accountservice.addUser(this.accountservice.users)
       this.router.navigateByUrl('/profile');
     }
 

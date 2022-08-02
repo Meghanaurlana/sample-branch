@@ -5,32 +5,33 @@
     </div>
 
     <div class="container">
-        <p-table responsiveLayout="scroll">
+        <p-table [value]="user"  responsiveLayout="scroll">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>name</th>
-                    <th>email</th>
+                    <th> first name</th>
+                    <th>last name</th>
                     <th>phone number</th>
-                    <th>edit</th>
+                    <th>email</th>
+                    <!-- <th>edit</th> -->
                     <th>delete</th>
 
                 </tr>
                 <!-- </ng-template>
-            <ng-template pTemplate="body" let-user let-columns="user" let-rowIndex="rowIndex"> -->
-                <tr *ngFor="let use of user; index as i; first as isFirst">
+            <ng-template pTemplate="body" let-user let-columns="" let-rowIndex="rowIndex"> -->
+                <tr *ngFor="let users of user" >
+                    <td>{{users.firstName}}</td>
+                    <td>{{users.lastName}}</td>
+                    <td>{{users.email}}</td>
+                    <td>{{users.phoneno}}</td>
 
-                    <td>{{use.name}}</td>
-                    <td>{{use.email}}</td>
-                    <td>{{use.phoneno}}</td>
-
-                    <td>
+                    <!-- <td>
                         <div class="addbtn">
-                            <p-button type="" label="edit" (click)="add()"></p-button>
-                        </div>
-                    </td>
+                            <p-button type="Submit" label="edit" (click)="edit()"></p-button>
+                        </div> 
+                    </td> -->
                     <td>
                         <div class="delbtn">
-                            <p-button type="" label="delete"></p-button>
+                            <p-button type="Submit" label="delete" (click)="accountdel(0)"></p-button>
                         </div>
                     </td>
                 </tr>
